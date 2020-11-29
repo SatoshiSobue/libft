@@ -6,19 +6,16 @@
 /*   By: ssobue <ssobue@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 11:33:46 by ssobue            #+#    #+#             */
-/*   Updated: 2020/11/29 11:33:47 by ssobue           ###   ########.fr       */
+/*   Updated: 2020/11/29 18:52:07 by satoshi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		**free_list(char **string_list)
+static char		**free_list(char **string_list, int count)
 {
-	int	count;
-
-	count = 0;
-	while (string_list[count])
-		free(string_list[count++]);
+	while (count >= 0)
+		free(string_list[count--]);
 	free(string_list);
 	return (NULL);
 }
@@ -78,9 +75,11 @@ char			**ft_split(char const *s, char c)
 	{
 		next_string_length = set_next_string(&next_string,
 			next_string_length, c);
-		if (!(string_list[count++] = ft_substr(next_string, 0,
+		if (!(string_list[count] = ft_substr(next_string, 0,
 				next_string_length)))
-			free_list(string_list);
+			return (free_list(string_list, --count));
+		else
+			count++;
 	}
 	string_list[count] = NULL;
 	return (string_list);

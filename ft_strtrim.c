@@ -6,7 +6,7 @@
 /*   By: ssobue <ssobue@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 11:36:32 by ssobue            #+#    #+#             */
-/*   Updated: 2020/11/29 11:36:34 by ssobue           ###   ########.fr       */
+/*   Updated: 2020/11/29 18:33:53 by satoshi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	return_length = 0;
 	while (is_included(s1[ft_strlen(s1) - 1 - set_count], set))
 		set_count++;
-	if (set_count != (int)ft_strlen(s1))
+	if (set_count != (long)ft_strlen(s1))
 		return_length = -set_count;
 	set_count = 0;
 	while (is_included(s1[set_count], set))

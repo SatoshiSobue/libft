@@ -6,7 +6,7 @@
 /*   By: ssobue <ssobue@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 11:36:45 by ssobue            #+#    #+#             */
-/*   Updated: 2020/11/29 11:36:47 by ssobue           ###   ########.fr       */
+/*   Updated: 2020/11/29 18:44:14 by satoshi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		*str = '\0';
 		return (str);
 	}
-	if ((unsigned int)len > (unsigned int)ft_strlen(s) - start)
-		len = (size_t)((unsigned int)ft_strlen(s) - start);
-	if (!(str = (char *)malloc(sizeof(char) * (int)(len + 1))))
+	if (len > ft_strlen(s) - (size_t)start)
+		len = ft_strlen(s) - (size_t)start;
+	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	initial_position = str;
 	s += start;

@@ -6,7 +6,7 @@
 /*   By: ssobue <ssobue@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 11:29:31 by ssobue            #+#    #+#             */
-/*   Updated: 2020/11/29 11:29:32 by ssobue           ###   ########.fr       */
+/*   Updated: 2020/11/29 18:28:19 by satoshi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char		*ft_itoa(int n)
 	digit = calc_digit(n, is_negative);
 	n = is_negative ? -n : n;
 	copy_of_n = (unsigned int)n;
-	if (!(str = (char *)malloc(sizeof(char) * digit + 1)))
+	if (!(str = (char *)malloc(sizeof(char) * (digit + 1))))
 		return (NULL);
 	str[digit] = '\0';
 	if (n == 0)

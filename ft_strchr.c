@@ -6,7 +6,7 @@
 /*   By: ssobue <ssobue@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 11:34:03 by ssobue            #+#    #+#             */
-/*   Updated: 2020/11/29 11:34:04 by ssobue           ###   ########.fr       */
+/*   Updated: 2020/11/29 18:24:38 by satoshi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	c = (char)c;
-	while (*s != c)
+	while (*s != (char)c)
 	{
 		if (*s == '\0')
 			return (NULL);
